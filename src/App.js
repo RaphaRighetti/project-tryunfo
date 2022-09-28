@@ -22,7 +22,7 @@ class App extends React.Component {
     irreverente e espontâneo e um dos profissionais mais
     “for fun” da cena do skateboard brasileiro.`;
 
-    const lbDescription = `Leticia Bufoni é uma skatista profissional brasileira,
+    const lbDescription = `Leticia Bufoni é uma skatista brasileira,
     considerada um dos maiores nomes da historia do esporte.
     Aos 14 anos mudou-se para de Los Angeles,
     na Califórnia, onde tornou-se uma skatista profissional.`;
