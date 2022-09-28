@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/project-tryunfo/static/css/main.d1d54474.css",
-    "main.js": "/project-tryunfo/static/js/main.597e5887.js",
+    "main.css": "/project-tryunfo/static/css/main.51eb4e44.css",
+    "main.js": "/project-tryunfo/static/js/main.bd13911d.js",
     "static/media/super-trunfo-logo.png": "/project-tryunfo/static/media/super-trunfo-logo.cd986c5d1ff2408b12e0.png",
     "index.html": "/project-tryunfo/index.html",
-    "main.d1d54474.css.map": "/project-tryunfo/static/css/main.d1d54474.css.map",
-    "main.597e5887.js.map": "/project-tryunfo/static/js/main.597e5887.js.map"
+    "main.51eb4e44.css.map": "/project-tryunfo/static/css/main.51eb4e44.css.map",
+    "main.bd13911d.js.map": "/project-tryunfo/static/js/main.bd13911d.js.map"
   },
   "entrypoints": [
-    "static/css/main.d1d54474.css",
-    "static/js/main.597e5887.js"
+    "static/css/main.51eb4e44.css",
+    "static/js/main.bd13911d.js"
   ]
 }
