@@ -22,9 +22,15 @@ class App extends React.Component {
     irreverente e espontâneo e um dos profissionais mais
     “for fun” da cena do skateboard brasileiro.`;
 
+    const lbDescription = `Leticia Bufoni é uma skatista profissional brasileira,
+    considerada um dos maiores nomes da historia do esporte.
+    Aos 14 anos mudou-se para de Los Angeles,
+    na Califórnia, onde tornou-se uma skatista profissional.`;
+
     const pbImg = 'https://www.esportelandia.com.br/wp-content/uploads/2020/01/Quem-%C3%A9-Pedro-Barros.jpg';
     const mpImg = 'https://www.olimpiadatododia.com.br/wp-content/uploads/2019/06/Brigando-por-vagas-Murilo-Peres-e-Yndiara-Asp-almejam-T%C3%B3quio.jpg';
     const rdImg = 'https://www.layback.com.br/wp-content/uploads/2017/08/ricardo-dexter.jpg';
+    const lbImg = 'https://hardcore.com.br/wp-content/uploads/sites/21/2022/05/WhatsApp-Image-2022-05-19-at-14.36.12-696x499.jpeg';
 
     this.state = {
       cardName: '',
@@ -67,8 +73,19 @@ class App extends React.Component {
         cardImage={ rdImg }
         cardRare="normal"
         cardTrunfo={ false }
+      />),
+      (<OutsideCard
+        key={ 3 }
+        cardName="Leticia Bufoni"
+        cardDescription={ lbDescription }
+        cardAttr1="67"
+        cardAttr2="88"
+        cardAttr3="55"
+        cardImage={ lbImg }
+        cardRare="muito raro"
+        cardTrunfo={ false }
       />)],
-      cardKeys: 3,
+      cardKeys: 4,
       hasTrunfo: false,
       nameFilter: '',
       rareFilter: 'todas',

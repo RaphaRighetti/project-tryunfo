@@ -267,7 +267,6 @@ button {
   box-sizing: border-box;
   padding: 10px;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .savedCards h1 {
@@ -275,7 +274,7 @@ button {
 }
 
 .savedCards .card {
-  margin: 5px;
+  margin: 7px;
 }
 
 .haveTrunfo {
