@@ -4,6 +4,7 @@ import OutsideCardRemovable from './components/OutsideCardRemovable';
 import OutsideCardPreview from './components/OutsideCardPreview';
 import OutsideCard from './components/OutsideCard';
 import Filter from './components/Filter';
+import HandCard from './components/HandCard';
 
 class App extends React.Component {
   constructor() {
@@ -13,24 +14,37 @@ class App extends React.Component {
     medalhista olímpico e apontado por muitos como o sucessor de
     Sandro Dias e Bob Burnquist sendo o principal
     representante do país na modalidade Bowl.`;
-
     const mpDescription = `Nascido em 1996 na cidade de São Paulo. Murilo 
     é considerado um dos principais nomes do skate brasileiro, 
     independente da modalidade, marretando em todos os tipos de terreno.`;
-
     const rdDescription = `Aos 29 anos, Dexter é visto como um skatista
     irreverente e espontâneo e um dos profissionais mais
     “for fun” da cena do skateboard brasileiro.`;
-
     const lbDescription = `Leticia Bufoni é uma skatista brasileira,
     considerada um dos maiores nomes da historia do esporte.
     Aos 14 anos mudou-se para de Los Angeles,
     na Califórnia, onde tornou-se uma skatista profissional.`;
+    const lfDescription = `Luiz Francisco, também conhecido como Luizinho, é um skatista profissional brasileiro. Ele competiu em várias edições do Campeonato Mundial de Skate Park masculino, levando a medalha de prata em 2019.`;
+    const ipDescription = `Recordista do aéreo mais alto da história dos X-Games, Italo Penarrubia é considerado um dos skatistas mais ousados e versáteis da atualidade!`;
+    const dvDescription = `Dora Varella é uma skatista profissional brasileira na categoria park. Ela foi uma das três atletas selecionadas para representar o Brasil na sua modalidade nos Jogos Olímpicos de Verão de 2020.`;
+    const rlDescription = `Rayssa Leal conquistou a medalha de prata no street nos Jogos Olímpicos de Tóquio e encantou o mundo ao torcer pelas outras atletas durante a disputa, com isso, ela venceu o The Visa Awards.`;
+    const fmDescription = `Ele tem apenas 15 anos, mas já encanta andando entre os profissionais do mais alto nível do skate mundial. O jovem Filipe Mota é um dos representantes do Brasil no Super Crown.`;
+    const loDescription = `Luan Vilanova de Oliveira mais conhecido como Luan Oliveira é um skatista profissional brasileiro e um dos mais influentes skatistas da sua geração de skaters no Brasil.`;
+    const moDescription = `O skatista curitibano Miguel Oliveira, de apenas 16 anos, que foi apresentado ao mundo inteiro ao ficar em 4º lugar no mundial Vans Park Series, que rolou na pista da Costeira, em Floripa.`;
+    const kkDescription = `Apenas 14 anos de idade e já com três vídeo partes. “New Bone” (“osso novo” na tradução), a mais nova delas, traz um Kalani amadurecido pela experiência, por uma lesão, pelas viagens.`;
 
     const pbImg = 'https://www.esportelandia.com.br/wp-content/uploads/2020/01/Quem-%C3%A9-Pedro-Barros.jpg';
     const mpImg = 'https://www.olimpiadatododia.com.br/wp-content/uploads/2019/06/Brigando-por-vagas-Murilo-Peres-e-Yndiara-Asp-almejam-T%C3%B3quio.jpg';
     const rdImg = 'https://www.layback.com.br/wp-content/uploads/2017/08/ricardo-dexter.jpg';
     const lbImg = 'https://hardcore.com.br/wp-content/uploads/sites/21/2022/05/WhatsApp-Image-2022-05-19-at-14.36.12-696x499.jpeg';
+    const lfImg = 'https://scontent.fcgh23-1.fna.fbcdn.net/v/t31.18172-8/27788834_1937471989614135_8055725068231980050_o.jpg?_nc_cat=103&ccb=1-7&_nc_sid=9267fe&_nc_ohc=xZAvCRm6EQAAX9ItV0X&_nc_ht=scontent.fcgh23-1.fna&oh=00_AT9t_d4loYHAsSalMlrFO_IfPv9QI0IoDtCgSzhRG_abYQ&oe=63742D89';
+    const ipImg = 'https://cdn.abcdoabc.com.br/Italo-Penarrubia-1_5804072f.jpg';
+    const dvImg = 'https://hardcore.com.br/wp-content/uploads/sites/21/2022/09/MV4M4502-1-scaled-e1663344008638-696x466.jpg';
+    const rlImg = 'https://www.nikesb.com/assets/imager/uploads/instagram/57887/Screen-Shot-2021-10-22-at-3.19.26-PM_fddb4b8cf8eb5e13f19e28f3ace2eae3.png';
+    const fmImg = 'https://www.onsk8.com/wp-content/uploads/2022/08/felipe-mota-primite-skateboards-skate-team-2022.jpg';
+    const loImg = 'https://www.lojahip.com.br/images/Blog/skate-conheca-a-biografia-do-luan-de-oliveira.jpg';
+    const moImg = 'https://3127bd09bc5dbc82e90b-2f84b28f704f9f5fbcd9c873e843c0af.ssl.cf1.rackcdn.com/images/photoGalleries/2016/2016-bra-floripa-finals-day-photos/_1000x700_fit_center-center_85_none/vps16_bra_Final_Miguel-Oliveira_helge.jpg';
+    const kkImg = 'https://cemporcentoskate.com.br/wp-content/uploads/2019/05/ka11ani-konig.jpg';
 
     this.state = {
       cardName: '',
@@ -84,12 +98,105 @@ class App extends React.Component {
         cardImage={ lbImg }
         cardRare="muito raro"
         cardTrunfo={ false }
+      />),
+      (<OutsideCard
+        key={ 4 }
+        cardName="Luis Francisco"
+        cardDescription={ lfDescription }
+        cardAttr1="70"
+        cardAttr2="59"
+        cardAttr3="81"
+        cardImage={ lfImg }
+        cardRare="raro"
+        cardTrunfo={ false }
+      />),
+      (<OutsideCard
+        key={ 5 }
+        cardName="Italo Penarrubia"
+        cardDescription={ ipDescription }
+        cardAttr1="77"
+        cardAttr2="29"
+        cardAttr3="65"
+        cardImage={ ipImg }
+        cardRare="normal"
+        cardTrunfo={ false }
+      />),
+      (<OutsideCard
+        key={ 6 }
+        cardName="Dora Varella"
+        cardDescription={ dvDescription }
+        cardAttr1="51"
+        cardAttr2="17"
+        cardAttr3="59"
+        cardImage={ dvImg }
+        cardRare="normal"
+        cardTrunfo={ false }
+      />),
+      (<OutsideCard
+        key={ 7 }
+        cardName="Rayssa Leal"
+        cardDescription={ rlDescription }
+        cardAttr1="70"
+        cardAttr2="90"
+        cardAttr3="50"
+        cardImage={ rlImg }
+        cardRare="muito raro"
+        cardTrunfo={ false }
+      />),
+      (<OutsideCard
+        key={ 8 }
+        cardName="Filipe Mota"
+        cardDescription={ fmDescription }
+        cardAttr1="51"
+        cardAttr2="86"
+        cardAttr3="53"
+        cardImage={ fmImg }
+        cardRare="raro"
+        cardTrunfo={ false }
+      />),
+      (<OutsideCard
+        key={ 9 }
+        cardName="Luan de Oliveira"
+        cardDescription={ loDescription }
+        cardAttr1="63"
+        cardAttr2="87"
+        cardAttr3="60"
+        cardImage={ loImg }
+        cardRare="raro"
+        cardTrunfo={ false }
+      />),
+      (<OutsideCard
+        key={ 10 }
+        cardName="Miguel Oliveira"
+        cardDescription={ moDescription }
+        cardAttr1="62"
+        cardAttr2="51"
+        cardAttr3="64"
+        cardImage={ moImg }
+        cardRare="normal"
+        cardTrunfo={ false }
+      />),
+      (<OutsideCard
+        key={ 11 }
+        cardName="Kalani Konig"
+        cardDescription={ kkDescription }
+        cardAttr1="65"
+        cardAttr2="61"
+        cardAttr3="66"
+        cardImage={ kkImg }
+        cardRare="normal"
+        cardTrunfo={ false }
       />)],
-      cardKeys: 4,
+      cardKeys: 12,
       hasTrunfo: false,
       nameFilter: '',
       rareFilter: 'todas',
       trunfoFilter: false,
+      showHome: true,
+      shuffledCards: [],
+      userCards: [],
+      rivalCards: [],
+      showHand: false,
     };
   }
 
@@ -173,60 +280,96 @@ class App extends React.Component {
     });
   };
 
+  startGame = () => {
+    this.setState((prev) => ({ 
+      showHome: false,
+      showHand: true,
+      shuffledCards: [...prev.savedCards].sort(() => Math.random() - 0.5),
+    }), () => {
+      this.setState((prev) => ({
+        userCards: [...prev.shuffledCards].filter((_e, i) => i >= 0 && i <= 5).map((element) => ({
+          att: [element.props.cardAttr1, element.props.cardAttr2, element.props.cardAttr3],
+          name: element.props.cardName,
+          trunfo: element.props.cardTrunfo,
+          image: element.props.cardImage,
+          id: element.key,
+        })),
+        rivalCards: [...prev.shuffledCards].filter((_e, i) => i >= 6 && i <= 11).map((element) => ({
+          att: [element.props.cardAttr1, element.props.cardAttr2, element.props.cardAttr3],
+          name: element.props.cardName,
+          trunfo: element.props.cardTrunfo,
+          image: element.props.cardImage,
+          id: element.key,
+        })),
+      }));
+    });
+  };
+
   render() {
     const { cardName, cardDescription,
       cardAttr1, cardAttr2, cardAttr3,
       cardImage, cardRare, cardTrunfo, savedCards, hasTrunfo,
-      nameFilter, rareFilter, trunfoFilter } = this.state;
+      nameFilter, rareFilter, trunfoFilter, showHome,
+      showHand, userCards } = this.state;
 
-    return (
-      <div>
-        <h1>Tryunfo</h1>
-        <div className="Form">
-          <Form
-            onInputChange={ this.onInputChange }
-            cardName={ cardName }
-            cardDescription={ cardDescription }
-            cardAttr1={ cardAttr1 }
-            cardAttr2={ cardAttr2 }
-            cardAttr3={ cardAttr3 }
-            cardImage={ cardImage }
-            cardRare={ cardRare }
-            cardTrunfo={ cardTrunfo }
-            isSaveButtonDisabled={ this.isSaveButtonDisabled() }
-            onSaveButtonClick={ this.onSaveButtonClick }
-            hasTrunfo={ hasTrunfo }
-          />
-          <OutsideCardPreview
-            cardName={ cardName }
-            cardDescription={ cardDescription }
-            cardAttr1={ cardAttr1 }
-            cardAttr2={ cardAttr2 }
-            cardAttr3={ cardAttr3 }
-            cardImage={ cardImage }
-            cardRare={ cardRare }
-            cardTrunfo={ cardTrunfo }
-          />
-        </div>
-        <div className="savedCards">
-          <h1>Saved Cards</h1>
-          {
-            savedCards.filter((e) => (
-              e.props.cardName.toLowerCase().includes(nameFilter.toLowerCase())
-              && (rareFilter === 'todas' ? true : e.props.cardRare === rareFilter)
-              && (trunfoFilter ? e.props.cardTrunfo : true)
-            ))
-          }
-
-        </div>
-        <Filter
+      const home = (<div>
+      <h1>Tryunfo</h1>
+      <div className="Form">
+        <Form
           onInputChange={ this.onInputChange }
-          nameFilter={ nameFilter }
-          rareFilter={ rareFilter }
-          trunfoFilter={ trunfoFilter }
-          handleTrunfoFilter={ this.handleTrunfoFilter }
+          cardName={ cardName }
+          cardDescription={ cardDescription }
+          cardAttr1={ cardAttr1 }
+          cardAttr2={ cardAttr2 }
+          cardAttr3={ cardAttr3 }
+          cardImage={ cardImage }
+          cardRare={ cardRare }
+          cardTrunfo={ cardTrunfo }
+          isSaveButtonDisabled={ this.isSaveButtonDisabled() }
+          onSaveButtonClick={ this.onSaveButtonClick }
+          hasTrunfo={ hasTrunfo }
+        />
+        <OutsideCardPreview
+          cardName={ cardName }
+          cardDescription={ cardDescription }
+          cardAttr1={ cardAttr1 }
+          cardAttr2={ cardAttr2 }
+          cardAttr3={ cardAttr3 }
+          cardImage={ cardImage }
+          cardRare={ cardRare }
+          cardTrunfo={ cardTrunfo }
         />
       </div>
+      <div className="savedCards">
+        <h1>Saved Cards</h1>
+        {
+          savedCards.filter((e) => (
+            e.props.cardName.toLowerCase().includes(nameFilter.toLowerCase())
+            && (rareFilter === 'todas' ? true : e.props.cardRare === rareFilter)
+            && (trunfoFilter ? e.props.cardTrunfo : true)
+          ))
+        }
+
+      </div>
+      <Filter
+        onInputChange={ this.onInputChange }
+        nameFilter={ nameFilter }
+        rareFilter={ rareFilter }
+        trunfoFilter={ trunfoFilter }
+        handleTrunfoFilter={ this.handleTrunfoFilter }
+      />
+      <div className='gamebtn'>
+      <button type='button' onClick={this.startGame} className="btn41-43 btn-41">
+        Jogar
+        </button>
+        </div>
+    </div>);
+
+    return (
+      <>
+      {showHome && home}
+      {showHand && (<div className='handBox'>{userCards?.map((e) => (<HandCard card={e} key={e.id}/>))}</div>)}
+      </>
     );
   }
 }

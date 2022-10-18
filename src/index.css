@@ -164,6 +164,7 @@ select {
 
 .cardAtt span {
   text-decoration: underline;
+  margin: 5px 0;
 }
 
 .trunfoLogo {
@@ -184,10 +185,6 @@ select {
 .title i {
   align-self: flex-end;
   margin-left: auto;
-}
-
-.cardAtt span {
-  margin: 5px 0;
 }
 
 .trunfoLogo-test {
@@ -338,4 +335,122 @@ button {
 .filters h2, .filters h1, .filters h3 {
   width: 100%;
   text-align: center;
+}
+
+.gamebtn {
+  width: 50%;
+  min-width: 100px;
+  align-self: center;
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+.handBox {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.cardMini {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 3px 1px rgb(0, 0, 0);
+  border-radius: 4px;
+  height: 200px;
+  width: 150px;
+  padding: 4px;
+  user-select: none;
+  margin: 5px;
+}
+
+.insideBorderMini {
+  display: flex;
+  background-color: #27476e;
+  border-radius: 4px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
+.insideCardMini {
+  background-color: #27476e;
+  border-radius: 4px;
+  height: 190px;
+  width: 140px;
+}
+
+.titleMini {
+  background-color: #001d4a;
+  display: flex;
+  color: #eca400;
+  text-align: end;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  padding: 0 2px;
+  font-weight: 600;
+  width: 100%;
+  height: 18px;
+  border-radius: 2px 2px 0 0;
+  font-size: 14px;
+}
+
+.titleMini i {
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.cardImageMini {
+  width: 140px;
+  position: absolute;
+}
+
+.cardInfoMini {
+  background-color: #27476e;
+  box-sizing: border-box;
+  border-top: 1px solid #001d4a;
+  padding-top: 1px;
+  color: white;
+  font-weight: 300;
+  font-size: 4px;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  top: 75px;
+  border-radius: 0 0 2px 2px;
+}
+
+.cardAttMini {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #eca400;
+  box-sizing: border-box;
+  padding: 4px;
+  color:#001d4a;
+  width: 100%;
+  border-radius: 0 0 2px 2px;
+  height: 95px;
+  font-weight: 500;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.cardAttMini span {
+  text-decoration: underline;
+  margin: 5px 0;
+}
+
+.trunfoLogoMini {
+  position: absolute;
+  width: 45px;
+  top: 25px;
+  right: 10px;
+}
+
+.cardMini:hover {
+  cursor: pointer;
+  outline: 1px solid #eca400;
+  outline-offset: 1px;
 }
