@@ -56,136 +56,136 @@ class App extends React.Component {
       cardRare: 'normal',
       cardTrunfo: false,
       savedCards: [(<OutsideCard
-        key={ 0 }
+        key={0}
         cardName="Pedro Barros"
-        cardDescription={ pbDescription }
+        cardDescription={pbDescription}
         cardAttr1="77"
         cardAttr2="43"
         cardAttr3="90"
-        cardImage={ pbImg }
+        cardImage={pbImg}
         cardRare="muito raro"
-        cardTrunfo={ false }
+        cardTrunfo={false}
       />),
       (<OutsideCard
-        key={ 1 }
+        key={1}
         cardName="Murilo Peres"
-        cardDescription={ mpDescription }
+        cardDescription={mpDescription}
         cardAttr1="90"
         cardAttr2="35"
         cardAttr3="85"
-        cardImage={ mpImg }
+        cardImage={mpImg}
         cardRare="raro"
-        cardTrunfo={ false }
+        cardTrunfo={false}
       />),
       (<OutsideCard
-        key={ 2 }
+        key={2}
         cardName="Ricardo Dexter"
-        cardDescription={ rdDescription }
+        cardDescription={rdDescription}
         cardAttr1="33"
         cardAttr2="80"
         cardAttr3="51"
-        cardImage={ rdImg }
+        cardImage={rdImg}
         cardRare="normal"
-        cardTrunfo={ false }
+        cardTrunfo={false}
       />),
       (<OutsideCard
-        key={ 3 }
+        key={3}
         cardName="Leticia Bufoni"
-        cardDescription={ lbDescription }
+        cardDescription={lbDescription}
         cardAttr1="67"
         cardAttr2="88"
         cardAttr3="55"
-        cardImage={ lbImg }
+        cardImage={lbImg}
         cardRare="muito raro"
-        cardTrunfo={ false }
+        cardTrunfo={false}
       />),
       (<OutsideCard
-        key={ 4 }
+        key={4}
         cardName="Luis Francisco"
-        cardDescription={ lfDescription }
+        cardDescription={lfDescription}
         cardAttr1="70"
         cardAttr2="59"
         cardAttr3="81"
-        cardImage={ lfImg }
+        cardImage={lfImg}
         cardRare="raro"
-        cardTrunfo={ false }
+        cardTrunfo={false}
       />),
       (<OutsideCard
-        key={ 5 }
+        key={5}
         cardName="Italo Penarrubia"
-        cardDescription={ ipDescription }
+        cardDescription={ipDescription}
         cardAttr1="77"
         cardAttr2="29"
         cardAttr3="65"
-        cardImage={ ipImg }
+        cardImage={ipImg}
         cardRare="normal"
-        cardTrunfo={ false }
+        cardTrunfo={false}
       />),
       (<OutsideCard
-        key={ 6 }
+        key={6}
         cardName="Dora Varella"
-        cardDescription={ dvDescription }
+        cardDescription={dvDescription}
         cardAttr1="51"
         cardAttr2="17"
         cardAttr3="59"
-        cardImage={ dvImg }
+        cardImage={dvImg}
         cardRare="normal"
-        cardTrunfo={ false }
+        cardTrunfo={false}
       />),
       (<OutsideCard
-        key={ 7 }
+        key={7}
         cardName="Rayssa Leal"
-        cardDescription={ rlDescription }
+        cardDescription={rlDescription}
         cardAttr1="70"
         cardAttr2="90"
         cardAttr3="50"
-        cardImage={ rlImg }
+        cardImage={rlImg}
         cardRare="muito raro"
-        cardTrunfo={ false }
+        cardTrunfo={false}
       />),
       (<OutsideCard
-        key={ 8 }
+        key={8}
         cardName="Filipe Mota"
-        cardDescription={ fmDescription }
+        cardDescription={fmDescription}
         cardAttr1="51"
         cardAttr2="86"
         cardAttr3="53"
-        cardImage={ fmImg }
+        cardImage={fmImg}
         cardRare="raro"
-        cardTrunfo={ false }
+        cardTrunfo={false}
       />),
       (<OutsideCard
-        key={ 9 }
+        key={9}
         cardName="Luan de Oliveira"
-        cardDescription={ loDescription }
+        cardDescription={loDescription}
         cardAttr1="63"
         cardAttr2="87"
         cardAttr3="60"
-        cardImage={ loImg }
+        cardImage={loImg}
         cardRare="raro"
-        cardTrunfo={ false }
+        cardTrunfo={false}
       />),
       (<OutsideCard
-        key={ 10 }
+        key={10}
         cardName="Miguel Oliveira"
-        cardDescription={ moDescription }
+        cardDescription={moDescription}
         cardAttr1="62"
         cardAttr2="51"
         cardAttr3="64"
-        cardImage={ moImg }
+        cardImage={moImg}
         cardRare="normal"
-        cardTrunfo={ false }
+        cardTrunfo={false}
       />),
       (<OutsideCard
-        key={ 11 }
+        key={11}
         cardName="Kalani Konig"
-        cardDescription={ kkDescription }
+        cardDescription={kkDescription}
         cardAttr1="65"
         cardAttr2="61"
         cardAttr3="66"
-        cardImage={ kkImg }
+        cardImage={kkImg}
         cardRare="normal"
-        cardTrunfo={ false }
+        cardTrunfo={false}
       />)],
       cardKeys: 12,
       hasTrunfo: false,
@@ -199,6 +199,34 @@ class App extends React.Component {
       showHand: false,
     };
   }
+
+  componentDidMount() {
+    if (localStorage.getItem('card')) {
+      const storageCards = JSON.parse(localStorage.getItem('card'));
+      const storageRemaped = storageCards.map((e, i) => (
+        <OutsideCardRemovable
+          key={this.state.cardKeys + i}
+          cardName={e.cardName}
+          cardDescription={e.cardDescription}
+          cardAttr1={e.cardAttr1}
+          cardAttr2={e.cardAttr2}
+          cardAttr3={e.cardAttr3}
+          cardImage={e.cardImage}
+          cardRare={e.cardRare}
+          cardTrunfo={e.cardTrunfo}
+          excludeBtn={this.excludeBtn}
+          cardKeys={this.state.cardKeys + i}
+        />
+      ));
+      const newCards = [...this.state.savedCards, ...storageRemaped];
+      this.setState({
+        savedCards: newCards,
+        hasTrunfo: newCards.reduce(
+          (acc, curr) => (curr.props.cardTrunfo === true ? true : acc), false),
+        cardKeys: newCards.length,
+      });
+    }
+  };
 
   onInputChange = (event) => {
     const { name, value, checked, type } = event.target;
@@ -214,22 +242,25 @@ class App extends React.Component {
       cardDescription, cardRare } = this.state;
     const maxPoints = 210;
     const sumAtt = parseFloat(cardAttr1)
-    + parseFloat(cardAttr2) + parseFloat(cardAttr3) <= maxPoints;
+      + parseFloat(cardAttr2) + parseFloat(cardAttr3) <= maxPoints;
     const maxAtt = 90;
     const validateAtt1 = parseFloat(cardAttr1) >= 0 && parseFloat(cardAttr1) <= maxAtt;
     const validateAtt2 = parseFloat(cardAttr2) >= 0 && parseFloat(cardAttr2) <= maxAtt;
     const validateAtt3 = parseFloat(cardAttr3) >= 0 && parseFloat(cardAttr3) <= maxAtt;
     const isEnable = cardName.length > 0
-    && cardImage.length > 0
-    && cardDescription.length > 0
-    && cardRare.length > 0 && sumAtt
-    && validateAtt1 && validateAtt2 && validateAtt3;
+      && cardImage.length > 0
+      && cardDescription.length > 0
+      && cardRare.length > 0 && sumAtt
+      && validateAtt1 && validateAtt2 && validateAtt3;
     return !isEnable;
   };
 
   excludeBtn = (event) => {
     const { name } = event.target;
     event.preventDefault();
+    const storageCards = JSON.parse(localStorage.getItem('card'));
+    const newStorageCards = storageCards.filter((e) => `${e.key}` !== name);
+    localStorage.setItem('card', JSON.stringify(newStorageCards));
     this.setState((prev) => ({
       savedCards: prev.savedCards.filter((e) => e.key !== name),
       hasTrunfo: prev.savedCards.find((e) => e.key === name)
@@ -239,21 +270,36 @@ class App extends React.Component {
 
   onSaveButtonClick = (event) => {
     event.preventDefault();
+    const storageCards = JSON.parse(localStorage.getItem('cards'));
+    const card = {
+      key: this.state.cardKeys,
+      cardName: this.state.cardName,
+      cardDescription: this.state.cardDescription,
+      cardAttr1: this.state.cardAttr1,
+      cardAttr2: this.state.cardAttr2,
+      cardAttr3: this.state.cardAttr3,
+      cardImage: this.state.cardImage,
+      cardRare: this.state.cardRare,
+      cardTrunfo: this.state.cardTrunfo,
+    };
+    const newStorageCards = storageCards ? [...storageCards, card] : [card];
+    localStorage.setItem('card', JSON.stringify(newStorageCards));
+   
     this.setState((prev) => ({
       savedCards: [...prev.savedCards,
-        (<OutsideCardRemovable
-          key={ prev.cardKeys }
-          cardName={ prev.cardName }
-          cardDescription={ prev.cardDescription }
-          cardAttr1={ prev.cardAttr1 }
-          cardAttr2={ prev.cardAttr2 }
-          cardAttr3={ prev.cardAttr3 }
-          cardImage={ prev.cardImage }
-          cardRare={ prev.cardRare }
-          cardTrunfo={ prev.cardTrunfo }
-          excludeBtn={ this.excludeBtn }
-          cardKeys={ prev.cardKeys }
-        />),
+      (<OutsideCardRemovable
+        key={prev.cardKeys}
+        cardName={prev.cardName}
+        cardDescription={prev.cardDescription}
+        cardAttr1={prev.cardAttr1}
+        cardAttr2={prev.cardAttr2}
+        cardAttr3={prev.cardAttr3}
+        cardImage={prev.cardImage}
+        cardRare={prev.cardRare}
+        cardTrunfo={prev.cardTrunfo}
+        excludeBtn={this.excludeBtn}
+        cardKeys={prev.cardKeys}
+      />),
       ],
       cardKeys: prev.cardKeys + 1,
       cardName: '',
@@ -281,7 +327,7 @@ class App extends React.Component {
   };
 
   startGame = () => {
-    this.setState((prev) => ({ 
+    this.setState((prev) => ({
       showHome: false,
       showHand: true,
       shuffledCards: [...prev.savedCards].sort(() => Math.random() - 0.5),
@@ -312,32 +358,32 @@ class App extends React.Component {
       nameFilter, rareFilter, trunfoFilter, showHome,
       showHand, userCards } = this.state;
 
-      const home = (<div>
+    const home = (<div>
       <h1>Tryunfo</h1>
       <div className="Form">
         <Form
-          onInputChange={ this.onInputChange }
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-          isSaveButtonDisabled={ this.isSaveButtonDisabled() }
-          onSaveButtonClick={ this.onSaveButtonClick }
-          hasTrunfo={ hasTrunfo }
+          onInputChange={this.onInputChange}
+          cardName={cardName}
+          cardDescription={cardDescription}
+          cardAttr1={cardAttr1}
+          cardAttr2={cardAttr2}
+          cardAttr3={cardAttr3}
+          cardImage={cardImage}
+          cardRare={cardRare}
+          cardTrunfo={cardTrunfo}
+          isSaveButtonDisabled={this.isSaveButtonDisabled()}
+          onSaveButtonClick={this.onSaveButtonClick}
+          hasTrunfo={hasTrunfo}
         />
         <OutsideCardPreview
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
+          cardName={cardName}
+          cardDescription={cardDescription}
+          cardAttr1={cardAttr1}
+          cardAttr2={cardAttr2}
+          cardAttr3={cardAttr3}
+          cardImage={cardImage}
+          cardRare={cardRare}
+          cardTrunfo={cardTrunfo}
         />
       </div>
       <div className="savedCards">
@@ -352,23 +398,23 @@ class App extends React.Component {
 
       </div>
       <Filter
-        onInputChange={ this.onInputChange }
-        nameFilter={ nameFilter }
-        rareFilter={ rareFilter }
-        trunfoFilter={ trunfoFilter }
-        handleTrunfoFilter={ this.handleTrunfoFilter }
+        onInputChange={this.onInputChange}
+        nameFilter={nameFilter}
+        rareFilter={rareFilter}
+        trunfoFilter={trunfoFilter}
+        handleTrunfoFilter={this.handleTrunfoFilter}
       />
       <div className='gamebtn'>
-      <button type='button' onClick={this.startGame} className="btn41-43 btn-41">
-        Jogar
+        <button type='button' onClick={this.startGame} className="btn41-43 btn-41">
+          Jogar
         </button>
-        </div>
+      </div>
     </div>);
 
     return (
       <>
-      {showHome && home}
-      {showHand && (<div className='handBox'>{userCards?.map((e) => (<HandCard card={e} key={e.id}/>))}</div>)}
+        {showHome && home}
+        {showHand && (<div className='handBox'>{userCards?.map((e) => (<HandCard card={e} key={e.id} />))}</div>)}
       </>
     );
   }
