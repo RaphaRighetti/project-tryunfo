@@ -3,15 +3,17 @@ import logo from '../img/super-trunfo-logo.png';
 
 class HandCard extends React.Component {
   render() {
-    const { card } = this.props;
+    const { card, clickMiniCard, hoverCard, idOn } = this.props;
     const trunfoImg = card.trunfo ? (
       <>
         <span
+          id={idOn}
           className="trunfoLogo-test"
         >
           Super Trunfo
         </span>
         <img
+          id={idOn}
           src={logo}
           className="trunfoLogoMini"
           alt="Super Trunfo"
@@ -19,34 +21,35 @@ class HandCard extends React.Component {
       </>
     ) : '';
     return (
-      <div className="cardMini">
-        <div className="insideBorderMini">
-          <div className="insideCardMini">
-            <div className="titleMini">
-              <i>{card.name}</i>
+      <div className={hoverCard ? "cardMini hoverMiniCard" : "cardMini" } id={idOn} onClick={clickMiniCard} >
+        <div className="insideBorderMini" id={idOn}>
+          <div className="insideCardMini" id={idOn}>
+            <div className="titleMini" id={idOn}>
+              <i id={idOn}>{card.name}</i>
             </div>
             <img
               className="cardImageMini"
               src={card.image}
               alt={card.name}
+              id={idOn}
             />
-            <div className="cardInfoMini">
-              <div className="cardAttMini">
-                <span>
+            <div className="cardInfoMini" id={idOn}>
+              <div className="cardAttMini" id={idOn}>
+                <span id={idOn}>
                   {' '}
                   Speed ⇢
                   {' '}
                   {card.att[0]}
                   {' '}
                 </span>
-                <span>
+                <span id={idOn}>
                   {' '}
                   Street ⇢
                   {' '}
                   {card.att[1]}
                   {' '}
                 </span>
-                <span>
+                <span id={idOn}>
                   {' '}
                   Park ⇢
                   {' '}

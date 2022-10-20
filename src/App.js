@@ -5,6 +5,9 @@ import OutsideCardPreview from './components/OutsideCardPreview';
 import OutsideCard from './components/OutsideCard';
 import Filter from './components/Filter';
 import HandCard from './components/HandCard';
+import Game from './components/Game';
+import Battle from './components/Battle';
+import Result from './components/Result';
 
 class App extends React.Component {
   constructor() {
@@ -42,7 +45,7 @@ class App extends React.Component {
     const dvImg = 'https://hardcore.com.br/wp-content/uploads/sites/21/2022/09/MV4M4502-1-scaled-e1663344008638-696x466.jpg';
     const rlImg = 'https://www.nikesb.com/assets/imager/uploads/instagram/57887/Screen-Shot-2021-10-22-at-3.19.26-PM_fddb4b8cf8eb5e13f19e28f3ace2eae3.png';
     const fmImg = 'https://www.onsk8.com/wp-content/uploads/2022/08/felipe-mota-primite-skateboards-skate-team-2022.jpg';
-    const loImg = 'https://www.lojahip.com.br/images/Blog/skate-conheca-a-biografia-do-luan-de-oliveira.jpg';
+    const loImg = 'https://s2.glbimg.com/IJEumL-xP5CuS1_w8hxZfymi8Z4=/0x0:5760x3240/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2020/w/L/M28MVrRCKgDl5up6lqow/ep-10-03.jpg';
     const moImg = 'https://3127bd09bc5dbc82e90b-2f84b28f704f9f5fbcd9c873e843c0af.ssl.cf1.rackcdn.com/images/photoGalleries/2016/2016-bra-floripa-finals-day-photos/_1000x700_fit_center-center_85_none/vps16_bra_Final_Miguel-Oliveira_helge.jpg';
     const kkImg = 'https://cemporcentoskate.com.br/wp-content/uploads/2019/05/ka11ani-konig.jpg';
 
@@ -196,7 +199,17 @@ class App extends React.Component {
       shuffledCards: [],
       userCards: [],
       rivalCards: [],
+      userSelectedCard: {},
+      rivalSelectedCard: {},
+      userTurn: true,
       showHand: false,
+      showGame: false,
+      showBattle: false,
+      showResult: false,
+      attChosen: 0,
+      round: 0,
+      wins: 0,
+      loses: 0,
     };
   }
 
@@ -270,7 +283,8 @@ class App extends React.Component {
 
   onSaveButtonClick = (event) => {
     event.preventDefault();
-    const storageCards = JSON.parse(localStorage.getItem('cards'));
+    const storageCards = JSON.parse(localStorage.getItem('card'));
+    console.log(storageCards);
     const card = {
       key: this.state.cardKeys,
       cardName: this.state.cardName,
@@ -284,7 +298,7 @@ class App extends React.Component {
     };
     const newStorageCards = storageCards ? [...storageCards, card] : [card];
     localStorage.setItem('card', JSON.stringify(newStorageCards));
-   
+
     this.setState((prev) => ({
       savedCards: [...prev.savedCards,
       (<OutsideCardRemovable
@@ -329,8 +343,10 @@ class App extends React.Component {
   startGame = () => {
     this.setState((prev) => ({
       showHome: false,
+      showGame: true,
       showHand: true,
-      shuffledCards: [...prev.savedCards].sort(() => Math.random() - 0.5),
+      shuffledCards: [...prev.savedCards]
+        .sort(() => Math.random() - 0.5).sort(() => Math.random() - 0.5).sort(() => Math.random() - 0.5),
     }), () => {
       this.setState((prev) => ({
         userCards: [...prev.shuffledCards].filter((_e, i) => i >= 0 && i <= 5).map((element) => ({
@@ -351,12 +367,77 @@ class App extends React.Component {
     });
   };
 
+  clickMiniCard = ({ target }) => {
+    const { userCards, rivalCards, attChosen } = this.state;
+    const userCard = userCards.find((e) => `${e.id}` === `${target.id}`);
+    const rivalCard = rivalCards.reduce((acc, curr) => acc.att[attChosen] > curr.att[attChosen] ? acc : curr);
+    const winRound = userCard.trunfo ? 1 : rivalCard.trunfo ? 0 : userCard.att[attChosen] > rivalCard.att[attChosen] ? 1 : 0;
+    const loseRound = rivalCard.trunfo ? 1 : userCard.trunfo ? 0 : userCard.att[attChosen] < rivalCard.att[attChosen] ? 1 : 0;
+    this.setState((prev) => ({
+      showBattle: true,
+      showHand: false,
+      userSelectedCard: userCard,
+      rivalSelectedCard: rivalCard,
+      round: prev.round + 1,
+      wins: prev.wins + winRound,
+      loses: prev.loses + loseRound,
+      userCards: prev.userCards.filter((e) => e.id !== userCard.id),
+      rivalCards: prev.rivalCards.filter((e) => e.id !== rivalCard.id),
+    }));
+  };
+
+  nextRound = () => {
+    const randomNum = Math.floor(Math.random() * 3);
+
+    this.setState((prev) => ({
+      showBattle: false,
+      showHand: true,
+      userTurn: !prev.userTurn,
+      attChosen: prev.userTurn ? randomNum : prev.attChosen,
+    }));
+  };
+
+  endMatch = () => {
+    this.setState({
+      showBattle: false,
+      showResult: true,
+    });
+  };
+
+  returnHome = () => {
+    this.setState({
+      showHome: true,
+      userTurn: true,
+      showHand: false,
+      showGame: false,
+      showBattle: false,
+      showResult: false,
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
+      cardImage: '',
+      cardRare: 'normal',
+      cardTrunfo: false,
+      nameFilter: '',
+      rareFilter: 'todas',
+      trunfoFilter: false,
+      attChosen: 0,
+      round: 0,
+      wins: 0,
+      loses: 0,
+    });
+  };
+
   render() {
     const { cardName, cardDescription,
       cardAttr1, cardAttr2, cardAttr3,
       cardImage, cardRare, cardTrunfo, savedCards, hasTrunfo,
       nameFilter, rareFilter, trunfoFilter, showHome,
-      showHand, userCards } = this.state;
+      showHand, userCards, attChosen, showGame,
+      wins, loses, round, userTurn, showBattle, userSelectedCard,
+      rivalSelectedCard, showResult } = this.state;
 
     const home = (<div>
       <h1>Tryunfo</h1>
@@ -411,10 +492,53 @@ class App extends React.Component {
       </div>
     </div>);
 
+    const myTurn = (
+      <>
+        <h2 className='myTurnTitle'>Sua vez: Escolha o atributo</h2>
+        <select
+          id="attChosen"
+          name="attChosen"
+          value={attChosen}
+          onChange={this.onInputChange}
+        >
+          <option value={0}>Speed</option>
+          <option value={1}>Street</option>
+          <option value={2}>Park</option>
+        </select>
+      </>
+    );
+
+    const atributes = ['speed', 'street', 'park'];
+
+    const cpuTurn = (
+      <h2>
+        Vez da CPU: Atributo escolhido <span className='cpuAtt'>{atributes[attChosen]}</span>
+      </h2>
+    );
+
+    const hand = (<div className='handBox'>
+      <div className='handInput'>
+        <h1>Rodada {round === 5 ? 'FINAL!' : round + 1}</h1>
+        {userTurn ? myTurn : cpuTurn}
+      </div>
+      {userCards?.map((e) => (<HandCard card={e} key={e.id} hoverCard={true} clickMiniCard={this.clickMiniCard} idOn={e.id} />))}
+    </div>);
+
     return (
       <>
         {showHome && home}
-        {showHand && (<div className='handBox'>{userCards?.map((e) => (<HandCard card={e} key={e.id} />))}</div>)}
+        {showGame && <Game wins={wins} loses={loses} round={round} />}
+        {showResult && <Result wins={wins} loses={loses} returnHome={this.returnHome} />}
+        {showHand && hand}
+        {showBattle && <Battle
+          userCard={userSelectedCard}
+          rivalCard={rivalSelectedCard}
+          win={userSelectedCard['att'][attChosen] > rivalSelectedCard['att'][attChosen]}
+          lose={userSelectedCard['att'][attChosen] < rivalSelectedCard['att'][attChosen]}
+          nextRound={this.nextRound}
+          round={round}
+          endMatch={this.endMatch}
+        />}
       </>
     );
   }

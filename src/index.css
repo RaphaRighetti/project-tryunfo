@@ -397,7 +397,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 30px;
+  margin: 30px 0;
 }
 
 .cardMini {
@@ -499,9 +499,241 @@ button {
   right: 10px;
 }
 
-.cardMini:hover {
+.hoverMiniCard:hover {
   cursor: pointer;
   outline: 1px solid #eca400;
   outline-offset: 1px;
   box-shadow: 0 0 6px 0 #eca400;
+}
+
+.handInput {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.handInput select {
+  height: 25px;
+  margin: 0 5px;
+}
+
+.handInput h1 {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.handInput h2 {
+  text-align: center;
+  margin: 10px 20px;
+}
+
+.game-stats {
+  margin-left: 50px;
+  margin-top: 50px;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.game-stats p {
+  margin: 5px 0;
+}
+
+.cpuAtt {
+  text-transform: uppercase ;
+  font-weight: 400;
+  font-style: italic;
+  color: #eca400;
+}
+
+.myTurnTitle {
+  margin: 10px 5px !important;
+}
+
+.cardsBattle {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.battleSec {
+  display: flex;
+  width: 100vw;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.winTitle, .loseTitle, .drawTitle {
+  width: 100%;
+  text-align: center;
+  margin: 20px 10px;
+  flex-direction: row;
+}
+
+.winTitle {
+  color: rgb(66, 219, 66);
+}
+
+.loseTitle {
+  color:rgb(236, 50, 50);
+}
+
+.battle-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.battle-buttons button {
+  width: 40%;
+  min-width: 150px;
+  max-width: 200px;
+}
+
+.resultSec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resultSec h2 {
+  margin: 20px 5px 0;
+  text-align: center;
+}
+
+.Form form {
+  margin: 5px;
+}
+
+.Form .card {
+  margin: 5px;
+}
+
+@media screen and (max-width: 375px) {
+  .cardsBattle {
+    flex-direction: column;
+  }
+
+  .cardsBattle h2 {
+    margin: 5px;
+  }
+
+  .card {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 3px 1px rgb(0, 0, 0);
+    border-radius: 4px;
+    height: 200px;
+    width: 150px !important;
+    max-width: fit-content;
+    padding: 4px;
+    user-select: none;
+    margin: 7px;
+    animation: mini-grow 0.7s;
+    min-width: 150px;
+  }
+  
+  .insideBorder {
+    display: flex;
+    background-color: #27476e;
+    border-radius: 4px;
+    height: 200px;
+    width: 150px;
+    justify-content: center;
+    align-items: center;
+    animation: mini-grow 0.7s;
+  }
+  
+  .insideCard {
+    background-color: #27476e;
+    border-radius: 4px;
+    height: 190px;
+    width: 140px;
+    animation: fade 0.7s;
+  }
+  
+  .title {
+    background-color: #001d4a;
+    display: flex;
+    color: #eca400;
+    text-align: end;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    padding: 0 2px;
+    font-weight: 600;
+    width: 100%;
+    height: 18px;
+    border-radius: 2px 2px 0 0;
+    font-size: 14px;
+  }
+  
+  .cardImage {
+    width: 140px;
+    position: absolute;
+  }
+  
+  .cardInfo {
+    background-color: #27476e;
+    box-sizing: border-box;
+    border-top: 1px solid #001d4a;
+    padding-top: 1px;
+    color: white;
+    font-weight: 300;
+    font-size: 4px;
+    position: relative;
+    width: 100%;
+    height: 100px;
+    top: 75px;
+    border-radius: 0 0 2px 2px;
+  }
+  
+  .cardAtt {
+    position: absolute;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #eca400;
+    box-sizing: border-box;
+    padding: 4px;
+    color:#001d4a;
+    width: 100%;
+    border-radius: 0 0 2px 2px;
+    height: 95px;
+    font-weight: 500;
+    font-size: 14px;
+    font-style: italic;
+  }
+  
+  .cardAtt span {
+    text-decoration: underline;
+    margin: 5px 0;
+  }
+  
+  .trunfoLogo {
+    position: absolute;
+    width: 45px;
+    top: 25px;
+    right: 10px;
+  }
+  
+  .cardRare {
+    display: none;
+  }
+  
+  .title i {
+    align-self: flex-end;
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .savedCards {
+    justify-content: center;
+  }
 }
