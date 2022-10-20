@@ -582,6 +582,10 @@ button {
   color:rgb(236, 50, 50);
 }
 
+.drawTitle {
+  color: #8A8A8A;
+}
+
 .battle-buttons {
   width: 100%;
   display: flex;
@@ -602,8 +606,7 @@ button {
 }
 
 .resultSec h2 {
-  margin: 20px 5px 0;
-  text-align: center;
+  width: fit-content;
 }
 
 .Form form {
@@ -612,6 +615,11 @@ button {
 
 .Form .card {
   margin: 5px;
+}
+
+.resultImg {
+  max-width: 90%;
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 375px) {
