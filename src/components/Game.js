@@ -1,13 +1,26 @@
-import React from "react";
+import React from 'react';
 
 class Game extends React.Component {
   render() {
-    const { round, wins, loses } = this.props
-    return(
+    const { round, wins, loses } = this.props;
+    return (
       <div className="game-stats">
-        <p>Rodadas: {round}/6</p>
-        <p>Vitórias: {wins}</p>
-        <p>Loses: {loses}</p>
+        <p>
+          Rodadas:
+          {' '}
+          {round}
+          /6
+        </p>
+        <p>
+          Vitórias:
+          {' '}
+          {wins}
+        </p>
+        <p>
+          Derrotas:
+          {' '}
+          {loses}
+        </p>
       </div>
     );
   }

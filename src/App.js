@@ -27,14 +27,14 @@ class App extends React.Component {
     considerada um dos maiores nomes da historia do esporte.
     Aos 14 anos mudou-se para de Los Angeles,
     na Califórnia, onde tornou-se uma skatista profissional.`;
-    const lfDescription = `Luiz Francisco, também conhecido como Luizinho, é um skatista profissional brasileiro. Ele competiu em várias edições do Campeonato Mundial de Skate Park masculino, levando a medalha de prata em 2019.`;
-    const ipDescription = `Recordista do aéreo mais alto da história dos X-Games, Italo Penarrubia é considerado um dos skatistas mais ousados e versáteis da atualidade!`;
-    const dvDescription = `Dora Varella é uma skatista profissional brasileira na categoria park. Ela foi uma das três atletas selecionadas para representar o Brasil na sua modalidade nos Jogos Olímpicos de Verão de 2020.`;
-    const rlDescription = `Rayssa Leal conquistou a medalha de prata no street nos Jogos Olímpicos de Tóquio e encantou o mundo ao torcer pelas outras atletas durante a disputa, com isso, ela venceu o The Visa Awards.`;
-    const fmDescription = `Ele tem apenas 15 anos, mas já encanta andando entre os profissionais do mais alto nível do skate mundial. O jovem Filipe Mota é um dos representantes do Brasil no Super Crown.`;
-    const loDescription = `Luan Vilanova de Oliveira mais conhecido como Luan Oliveira é um skatista profissional brasileiro e um dos mais influentes skatistas da sua geração de skaters no Brasil.`;
-    const moDescription = `O skatista curitibano Miguel Oliveira, de apenas 16 anos, que foi apresentado ao mundo inteiro ao ficar em 4º lugar no mundial Vans Park Series, que rolou na pista da Costeira, em Floripa.`;
-    const kkDescription = `Apenas 14 anos de idade e já com três vídeo partes. “New Bone” (“osso novo” na tradução), a mais nova delas, traz um Kalani amadurecido pela experiência, por uma lesão, pelas viagens.`;
+    const lfDescription = 'Luiz Francisco, também conhecido como Luizinho, é um skatista profissional brasileiro. Ele competiu em várias edições do Campeonato Mundial de Skate Park masculino, levando a medalha de prata em 2019.';
+    const ipDescription = 'Recordista do aéreo mais alto da história dos X-Games, Italo Penarrubia é considerado um dos skatistas mais ousados e versáteis da atualidade!';
+    const dvDescription = 'Dora Varella é uma skatista profissional brasileira na categoria park. Ela foi uma das três atletas selecionadas para representar o Brasil na sua modalidade nos Jogos Olímpicos de Verão de 2020.';
+    const rlDescription = 'Rayssa Leal conquistou a medalha de prata no street nos Jogos Olímpicos de Tóquio e encantou o mundo ao torcer pelas outras atletas durante a disputa, com isso, ela venceu o The Visa Awards.';
+    const fmDescription = 'Ele tem apenas 15 anos, mas já encanta andando entre os profissionais do mais alto nível do skate mundial. O jovem Filipe Mota é um dos representantes do Brasil no Super Crown.';
+    const loDescription = 'Luan Vilanova de Oliveira mais conhecido como Luan Oliveira é um skatista profissional brasileiro e um dos mais influentes skatistas da sua geração de skaters no Brasil.';
+    const moDescription = 'O skatista curitibano Miguel Oliveira, de apenas 16 anos, que foi apresentado ao mundo inteiro ao ficar em 4º lugar no mundial Vans Park Series, que rolou na pista da Costeira, em Floripa.';
+    const kkDescription = 'Apenas 14 anos de idade e já com três vídeo partes. “New Bone” (“osso novo” na tradução), a mais nova delas, traz um Kalani amadurecido pela experiência, por uma lesão, pelas viagens.';
 
     const pbImg = 'https://www.esportelandia.com.br/wp-content/uploads/2020/01/Quem-%C3%A9-Pedro-Barros.jpg';
     const mpImg = 'https://www.olimpiadatododia.com.br/wp-content/uploads/2019/06/Brigando-por-vagas-Murilo-Peres-e-Yndiara-Asp-almejam-T%C3%B3quio.jpg';
@@ -59,136 +59,136 @@ class App extends React.Component {
       cardRare: 'normal',
       cardTrunfo: false,
       savedCards: [(<OutsideCard
-        key={0}
+        key={ 0 }
         cardName="Pedro Barros"
-        cardDescription={pbDescription}
+        cardDescription={ pbDescription }
         cardAttr1="77"
         cardAttr2="43"
         cardAttr3="90"
-        cardImage={pbImg}
+        cardImage={ pbImg }
         cardRare="muito raro"
-        cardTrunfo={false}
+        cardTrunfo={ false }
       />),
       (<OutsideCard
-        key={1}
+        key={ 1 }
         cardName="Murilo Peres"
-        cardDescription={mpDescription}
+        cardDescription={ mpDescription }
         cardAttr1="90"
         cardAttr2="35"
         cardAttr3="85"
-        cardImage={mpImg}
+        cardImage={ mpImg }
         cardRare="raro"
-        cardTrunfo={false}
+        cardTrunfo={ false }
       />),
       (<OutsideCard
-        key={2}
+        key={ 2 }
         cardName="Ricardo Dexter"
-        cardDescription={rdDescription}
+        cardDescription={ rdDescription }
         cardAttr1="33"
         cardAttr2="80"
         cardAttr3="51"
-        cardImage={rdImg}
+        cardImage={ rdImg }
         cardRare="normal"
-        cardTrunfo={false}
+        cardTrunfo={ false }
       />),
       (<OutsideCard
-        key={3}
+        key={ 3 }
         cardName="Leticia Bufoni"
-        cardDescription={lbDescription}
+        cardDescription={ lbDescription }
         cardAttr1="67"
         cardAttr2="88"
         cardAttr3="55"
-        cardImage={lbImg}
+        cardImage={ lbImg }
         cardRare="muito raro"
-        cardTrunfo={false}
+        cardTrunfo={ false }
       />),
       (<OutsideCard
-        key={4}
+        key={ 4 }
         cardName="Luis Francisco"
-        cardDescription={lfDescription}
+        cardDescription={ lfDescription }
         cardAttr1="70"
         cardAttr2="59"
         cardAttr3="81"
-        cardImage={lfImg}
+        cardImage={ lfImg }
         cardRare="raro"
-        cardTrunfo={false}
+        cardTrunfo={ false }
       />),
       (<OutsideCard
-        key={5}
+        key={ 5 }
         cardName="Italo Penarrubia"
-        cardDescription={ipDescription}
+        cardDescription={ ipDescription }
         cardAttr1="77"
         cardAttr2="29"
         cardAttr3="65"
-        cardImage={ipImg}
+        cardImage={ ipImg }
         cardRare="normal"
-        cardTrunfo={false}
+        cardTrunfo={ false }
       />),
       (<OutsideCard
-        key={6}
+        key={ 6 }
         cardName="Dora Varella"
-        cardDescription={dvDescription}
+        cardDescription={ dvDescription }
         cardAttr1="51"
         cardAttr2="17"
         cardAttr3="59"
-        cardImage={dvImg}
+        cardImage={ dvImg }
         cardRare="normal"
-        cardTrunfo={false}
+        cardTrunfo={ false }
       />),
       (<OutsideCard
-        key={7}
+        key={ 7 }
         cardName="Rayssa Leal"
-        cardDescription={rlDescription}
+        cardDescription={ rlDescription }
         cardAttr1="70"
         cardAttr2="90"
         cardAttr3="50"
-        cardImage={rlImg}
+        cardImage={ rlImg }
         cardRare="muito raro"
-        cardTrunfo={false}
+        cardTrunfo={ false }
       />),
       (<OutsideCard
-        key={8}
+        key={ 8 }
         cardName="Filipe Mota"
-        cardDescription={fmDescription}
+        cardDescription={ fmDescription }
         cardAttr1="51"
         cardAttr2="86"
         cardAttr3="53"
-        cardImage={fmImg}
+        cardImage={ fmImg }
         cardRare="raro"
-        cardTrunfo={false}
+        cardTrunfo={ false }
       />),
       (<OutsideCard
-        key={9}
+        key={ 9 }
         cardName="Luan de Oliveira"
-        cardDescription={loDescription}
+        cardDescription={ loDescription }
         cardAttr1="63"
         cardAttr2="87"
         cardAttr3="60"
-        cardImage={loImg}
+        cardImage={ loImg }
         cardRare="raro"
-        cardTrunfo={false}
+        cardTrunfo={ false }
       />),
       (<OutsideCard
-        key={10}
+        key={ 10 }
         cardName="Miguel Oliveira"
-        cardDescription={moDescription}
+        cardDescription={ moDescription }
         cardAttr1="62"
         cardAttr2="51"
         cardAttr3="64"
-        cardImage={moImg}
+        cardImage={ moImg }
         cardRare="normal"
-        cardTrunfo={false}
+        cardTrunfo={ false }
       />),
       (<OutsideCard
-        key={11}
+        key={ 11 }
         cardName="Kalani Konig"
-        cardDescription={kkDescription}
+        cardDescription={ kkDescription }
         cardAttr1="65"
         cardAttr2="61"
         cardAttr3="66"
-        cardImage={kkImg}
+        cardImage={ kkImg }
         cardRare="normal"
-        cardTrunfo={false}
+        cardTrunfo={ false }
       />)],
       cardKeys: 12,
       hasTrunfo: false,
@@ -218,28 +218,27 @@ class App extends React.Component {
       const storageCards = JSON.parse(localStorage.getItem('card'));
       const storageRemaped = storageCards.map((e, i) => (
         <OutsideCardRemovable
-          key={this.state.cardKeys + i}
-          cardName={e.cardName}
-          cardDescription={e.cardDescription}
-          cardAttr1={e.cardAttr1}
-          cardAttr2={e.cardAttr2}
-          cardAttr3={e.cardAttr3}
-          cardImage={e.cardImage}
-          cardRare={e.cardRare}
-          cardTrunfo={e.cardTrunfo}
-          excludeBtn={this.excludeBtn}
-          cardKeys={this.state.cardKeys + i}
+          key={ this.state.cardKeys + i }
+          cardName={ e.cardName }
+          cardDescription={ e.cardDescription }
+          cardAttr1={ e.cardAttr1 }
+          cardAttr2={ e.cardAttr2 }
+          cardAttr3={ e.cardAttr3 }
+          cardImage={ e.cardImage }
+          cardRare={ e.cardRare }
+          cardTrunfo={ e.cardTrunfo }
+          excludeBtn={ this.excludeBtn }
+          cardKeys={ this.state.cardKeys + i }
         />
       ));
       const newCards = [...this.state.savedCards, ...storageRemaped];
       this.setState({
         savedCards: newCards,
-        hasTrunfo: newCards.reduce(
-          (acc, curr) => (curr.props.cardTrunfo === true ? true : acc), false),
+        hasTrunfo: newCards.reduce((acc, curr) => (curr.props.cardTrunfo === true ? true : acc), false),
         cardKeys: newCards.length,
       });
     }
-  };
+  }
 
   onInputChange = (event) => {
     const { name, value, checked, type } = event.target;
@@ -301,19 +300,19 @@ class App extends React.Component {
 
     this.setState((prev) => ({
       savedCards: [...prev.savedCards,
-      (<OutsideCardRemovable
-        key={prev.cardKeys}
-        cardName={prev.cardName}
-        cardDescription={prev.cardDescription}
-        cardAttr1={prev.cardAttr1}
-        cardAttr2={prev.cardAttr2}
-        cardAttr3={prev.cardAttr3}
-        cardImage={prev.cardImage}
-        cardRare={prev.cardRare}
-        cardTrunfo={prev.cardTrunfo}
-        excludeBtn={this.excludeBtn}
-        cardKeys={prev.cardKeys}
-      />),
+        (<OutsideCardRemovable
+          key={ prev.cardKeys }
+          cardName={ prev.cardName }
+          cardDescription={ prev.cardDescription }
+          cardAttr1={ prev.cardAttr1 }
+          cardAttr2={ prev.cardAttr2 }
+          cardAttr3={ prev.cardAttr3 }
+          cardImage={ prev.cardImage }
+          cardRare={ prev.cardRare }
+          cardTrunfo={ prev.cardTrunfo }
+          excludeBtn={ this.excludeBtn }
+          cardKeys={ prev.cardKeys }
+        />),
       ],
       cardKeys: prev.cardKeys + 1,
       cardName: '',
@@ -370,7 +369,7 @@ class App extends React.Component {
   clickMiniCard = ({ target }) => {
     const { userCards, rivalCards, attChosen } = this.state;
     const userCard = userCards.find((e) => `${e.id}` === `${target.id}`);
-    const rivalCard = rivalCards.reduce((acc, curr) => acc.att[attChosen] > curr.att[attChosen] ? acc : curr);
+    const rivalCard = rivalCards.reduce((acc, curr) => (acc.att[attChosen] > curr.att[attChosen] ? acc : curr));
     const winRound = userCard.trunfo ? 1 : rivalCard.trunfo ? 0 : userCard.att[attChosen] > rivalCard.att[attChosen] ? 1 : 0;
     const loseRound = rivalCard.trunfo ? 1 : userCard.trunfo ? 0 : userCard.att[attChosen] < rivalCard.att[attChosen] ? 1 : 0;
     this.setState((prev) => ({
@@ -443,28 +442,28 @@ class App extends React.Component {
       <h1>Tryunfo</h1>
       <div className="Form">
         <Form
-          onInputChange={this.onInputChange}
-          cardName={cardName}
-          cardDescription={cardDescription}
-          cardAttr1={cardAttr1}
-          cardAttr2={cardAttr2}
-          cardAttr3={cardAttr3}
-          cardImage={cardImage}
-          cardRare={cardRare}
-          cardTrunfo={cardTrunfo}
-          isSaveButtonDisabled={this.isSaveButtonDisabled()}
-          onSaveButtonClick={this.onSaveButtonClick}
-          hasTrunfo={hasTrunfo}
+          onInputChange={ this.onInputChange }
+          cardName={ cardName }
+          cardDescription={ cardDescription }
+          cardAttr1={ cardAttr1 }
+          cardAttr2={ cardAttr2 }
+          cardAttr3={ cardAttr3 }
+          cardImage={ cardImage }
+          cardRare={ cardRare }
+          cardTrunfo={ cardTrunfo }
+          isSaveButtonDisabled={ this.isSaveButtonDisabled() }
+          onSaveButtonClick={ this.onSaveButtonClick }
+          hasTrunfo={ hasTrunfo }
         />
         <OutsideCardPreview
-          cardName={cardName}
-          cardDescription={cardDescription}
-          cardAttr1={cardAttr1}
-          cardAttr2={cardAttr2}
-          cardAttr3={cardAttr3}
-          cardImage={cardImage}
-          cardRare={cardRare}
-          cardTrunfo={cardTrunfo}
+          cardName={ cardName }
+          cardDescription={ cardDescription }
+          cardAttr1={ cardAttr1 }
+          cardAttr2={ cardAttr2 }
+          cardAttr3={ cardAttr3 }
+          cardImage={ cardImage }
+          cardRare={ cardRare }
+          cardTrunfo={ cardTrunfo }
         />
       </div>
       <div className="savedCards">
@@ -479,14 +478,14 @@ class App extends React.Component {
 
       </div>
       <Filter
-        onInputChange={this.onInputChange}
-        nameFilter={nameFilter}
-        rareFilter={rareFilter}
-        trunfoFilter={trunfoFilter}
-        handleTrunfoFilter={this.handleTrunfoFilter}
+        onInputChange={ this.onInputChange }
+        nameFilter={ nameFilter }
+        rareFilter={ rareFilter }
+        trunfoFilter={ trunfoFilter }
+        handleTrunfoFilter={ this.handleTrunfoFilter }
       />
-      <div className='gamebtn'>
-        <button type='button' onClick={this.startGame} className="btn41-43 btn-41">
+      <div className="gamebtn">
+        <button type="button" onClick={ this.startGame } className="btn41-43 btn-41">
           Jogar
         </button>
       </div>
@@ -494,16 +493,16 @@ class App extends React.Component {
 
     const myTurn = (
       <>
-        <h2 className='myTurnTitle'>Sua vez: Escolha o atributo</h2>
+        <h2 className="myTurnTitle">Sua vez: Escolha o atributo</h2>
         <select
           id="attChosen"
           name="attChosen"
-          value={attChosen}
-          onChange={this.onInputChange}
+          value={ attChosen }
+          onChange={ this.onInputChange }
         >
-          <option value={0}>Speed</option>
-          <option value={1}>Street</option>
-          <option value={2}>Park</option>
+          <option value={ 0 }>Speed</option>
+          <option value={ 1 }>Street</option>
+          <option value={ 2 }>Park</option>
         </select>
       </>
     );
@@ -512,32 +511,38 @@ class App extends React.Component {
 
     const cpuTurn = (
       <h2>
-        Vez da CPU: Atributo escolhido <span className='cpuAtt'>{atributes[attChosen]}</span>
+        Vez da CPU: Atributo escolhido
+        {' '}
+        <span className="cpuAtt">{atributes[attChosen]}</span>
       </h2>
     );
 
-    const hand = (<div className='handBox'>
-      <div className='handInput'>
-        <h1>Rodada {round === 5 ? 'FINAL!' : round + 1}</h1>
+    const hand = (<div className="handBox">
+      <div className="handInput">
+        <h1>
+          Rodada
+          {' '}
+          {round === 5 ? 'FINAL!' : round + 1}
+        </h1>
         {userTurn ? myTurn : cpuTurn}
       </div>
-      {userCards?.map((e) => (<HandCard card={e} key={e.id} hoverCard={true} clickMiniCard={this.clickMiniCard} idOn={e.id} />))}
+      {userCards?.map((e) => (<HandCard card={ e } key={ e.id } hoverCard clickMiniCard={ this.clickMiniCard } idOn={ e.id } />))}
     </div>);
 
     return (
       <>
         {showHome && home}
-        {showGame && <Game wins={wins} loses={loses} round={round} />}
-        {showResult && <Result wins={wins} loses={loses} returnHome={this.returnHome} />}
+        {showGame && <Game wins={ wins } loses={ loses } round={ round } />}
+        {showResult && <Result wins={ wins } loses={ loses } returnHome={ this.returnHome } />}
         {showHand && hand}
         {showBattle && <Battle
-          userCard={userSelectedCard}
-          rivalCard={rivalSelectedCard}
-          win={userSelectedCard['att'][attChosen] > rivalSelectedCard['att'][attChosen]}
-          lose={userSelectedCard['att'][attChosen] < rivalSelectedCard['att'][attChosen]}
-          nextRound={this.nextRound}
-          round={round}
-          endMatch={this.endMatch}
+          userCard={ userSelectedCard }
+          rivalCard={ rivalSelectedCard }
+          win={ userSelectedCard.att[attChosen] > rivalSelectedCard.att[attChosen] }
+          lose={ userSelectedCard.att[attChosen] < rivalSelectedCard.att[attChosen] }
+          nextRound={ this.nextRound }
+          round={ round }
+          endMatch={ this.endMatch }
         />}
       </>
     );
