@@ -40,7 +40,7 @@ class App extends React.Component {
     const mpImg = 'https://www.olimpiadatododia.com.br/wp-content/uploads/2019/06/Brigando-por-vagas-Murilo-Peres-e-Yndiara-Asp-almejam-T%C3%B3quio.jpg';
     const rdImg = 'https://www.layback.com.br/wp-content/uploads/2017/08/ricardo-dexter.jpg';
     const lbImg = 'https://hardcore.com.br/wp-content/uploads/sites/21/2022/05/WhatsApp-Image-2022-05-19-at-14.36.12-696x499.jpeg';
-    const lfImg = 'https://scontent.fcgh23-1.fna.fbcdn.net/v/t31.18172-8/27788834_1937471989614135_8055725068231980050_o.jpg?_nc_cat=103&ccb=1-7&_nc_sid=9267fe&_nc_ohc=xZAvCRm6EQAAX9ItV0X&_nc_ht=scontent.fcgh23-1.fna&oh=00_AT9t_d4loYHAsSalMlrFO_IfPv9QI0IoDtCgSzhRG_abYQ&oe=63742D89';
+    const lfImg = 'https://sportbuzz.uol.com.br/media/uploads/skate-luiz-francisco-campeao-do-stu.png';
     const ipImg = 'https://cdn.abcdoabc.com.br/Italo-Penarrubia-1_5804072f.jpg';
     const dvImg = 'https://hardcore.com.br/wp-content/uploads/sites/21/2022/09/MV4M4502-1-scaled-e1663344008638-696x466.jpg';
     const rlImg = 'https://www.nikesb.com/assets/imager/uploads/instagram/57887/Screen-Shot-2021-10-22-at-3.19.26-PM_fddb4b8cf8eb5e13f19e28f3ace2eae3.png';
